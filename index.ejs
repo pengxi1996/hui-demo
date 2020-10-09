@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>HUI统一基础框架</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="<%= BASE_URL %>sysconfig.js"></script>
+    <script>
+      if (window.LOCAL_CONFIG.SYS_NAME) {
+        document.title = window.LOCAL_CONFIG.SYS_NAME;
+      }
+    </script>
+
+    <script src="<%= BASE_URL %>static/locale/lang/en-US.js?<%= webpack.hash %>"></script>
+    <script src="<%= BASE_URL %>static/locale/lang/zh-CN.js?<%= webpack.hash %>"></script>
+    <script src="<%= BASE_URL %>static/locale/lang/zh-TW.js?<%= webpack.hash %>"></script>
+    <% for (let i of htmlWebpackPlugin.options.dll) { %>
+    <script src="<%= i %>"></script>
+    <% } %>
+    <script src="<%= BASE_URL %>static/js/require.js"></script>
+    <script>
+      var prefix = "./";
+      if (window.__POWERED_BY_HUI_MICRO_APP__) {
+        prefix = window.__INJECTED_PUBLIC_PATH_BY_HUI_MICRO_APP__;
+      }
+      window.requirejs = window.require;
+      window.require = null;
+      requirejs.config({
+        paths: {
+          vue: prefix + "static/js/vue.min",
+          vuex: prefix + "static/js/vuex.min"
+        }
+      });
+    </script>
+  </body>
+</html>
