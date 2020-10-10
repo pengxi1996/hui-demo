@@ -2,7 +2,7 @@ window.LOCAL_CONFIG = {
   // 服务及接口
   API_HOME: '/',
   OMC_GSV: '/g/hsxone.omc/v',
-  SYS_NAME: '统一框架',
+  SYS_NAME: '债券一级分销系统V1.0',
   FRAME_NAME: 'hui', //研发中心框架
   MENUS_ROOT_NAME: 'bizroot',
   THEME: 'lightblue', //lightblue
@@ -32,8 +32,8 @@ window.LOCAL_CONFIG = {
   isOpenFirstPwd: false, //第一次登陆是否弹出修改密码
   webEncryptType: "3DES",
   isShowNoticeBar: false, //是否显示底部消息提示组件
-  isHidePwdAndLockScreen: true, //是否隐藏修改密码和锁屏
-  isShowMsg: false, //首页上是否显示站内消息
+  isHidePwdAndLockScreen: false, //是否隐藏修改密码和锁屏
+  isShowMsg: true, //首页上是否显示站内消息
   isCasLogin: false, // 是否启用MVC单点登录
   isIARCasLogin: false, // 是否启用IAR单点登录
   isCasAdapter: false, //是否启用适配器单点登陆
@@ -42,12 +42,12 @@ window.LOCAL_CONFIG = {
   casLogOutUrl: '/cas/user/logout', //IAR登出接口
   isI18n: true,
   isTenantMode: false, //是否是多租户模式
-  isShowLocalLang: true, //是否显示国际化切换按钮
-  isShowTheme: true, //是否显示换肤
+  isShowLocalLang: false, //是否显示国际化切换按钮
+  isShowTheme: false, //是否显示换肤
   isRecordUserBehavior: false, //是否记录用户行为分析
   freeLogin: false, // 设置为true时，用于屏蔽锁屏、修改密码、退出登录
   logo: '', // 个性化logo
-  showMenuSearch: false, // 是否显示顶部菜单检索框
+  showMenuSearch: true, // 是否显示顶部菜单检索框
   isSubSystemMenu: false, //是否以二级菜单的形式展示子系统
   localLangs: ['zh-CN', 'zh-TW', 'en-US'], //zh-CN=中文，zh-TW=中文（繁体），en-US=English
   isExpandSidebarMenu: true, //第一次登录之后是否就展开左侧菜单
