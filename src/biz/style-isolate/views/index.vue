@@ -47,7 +47,7 @@
         <h-page
           :total="data.length"
           show-sizer
-          :page-size-opts="[1,2,3,4] "
+          :page-size-opts="[1,2,3,4,10] "
           :page-size="pageSize"
           :current-page="currentPage"
           @on-change="handleCurrentChange"
