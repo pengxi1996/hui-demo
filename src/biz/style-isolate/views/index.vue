@@ -149,7 +149,7 @@ export default {
       nameSearch: false,
       dateSearch: false,
       dateVal: [],
-      pageSize: 1,
+      pageSize: 10,
       currentPage: 1
     };
   },
@@ -204,44 +204,6 @@ export default {
           });
         }
       } else {
-        this.data = [
-          {
-            name: "张三",
-            sex: "男",
-            age: 22,
-            date: "1993/02/01"
-          },
-          {
-            name: "李四",
-            sex: "男",
-            age: 24,
-            date: "1995/02/01"
-          },
-          {
-            name: "王五",
-            sex: "男",
-            age: 26,
-            date: "1991/02/01"
-          },
-          {
-            name: "张大妈",
-            sex: "女",
-            age: 46,
-            date: "1971/02/03"
-          },
-          {
-            name: "王大妈",
-            sex: "女",
-            age: 56,
-            date: "1941/06/08"
-          },
-          {
-            name: "阿萨德我",
-            sex: "女",
-            age: 26,
-            date: "1993/05/01"
-          }
-        ];
       }
     },
     searchName() {

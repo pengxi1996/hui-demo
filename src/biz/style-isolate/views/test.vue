@@ -7,10 +7,10 @@
       :label-width="80"
       errorFocus
       cols="2"
-      rules="fromRule"
+      :rules="fromRule"
     >
-      <h-form-item label="输入框" prop="input">
-        <h-input v-model="formItem1.input" placeholder="请输入"></h-input>
+      <h-form-item label="姓名" prop="name">
+        <h-input v-model="formItem1.name" placeholder="请输入姓名"></h-input>
       </h-form-item>
       <h-form-item label="日期控件">
         <h-row>
@@ -35,26 +35,7 @@
         </h-select>
       </h-form-item>
       <h-form-item label="金额框" prop="money">
-        <h-typefield v-model="formItem1.money">
-          <!--  <h-select v-model="select1" slot="prepend" style="width: 80px">
-              <h-option value="http">http://</h-option>
-              <h-option value="https">https://</h-option>
-          </h-select>-->
-
-          <h-select
-            v-model="select2"
-            placeholder
-            slot="append"
-            style="width: 45px"
-            :isArrow="false"
-            :clearable="false"
-            :tranfer="true"
-          >
-            <h-option value="com">.com</h-option>
-            <h-option value="org">.org</h-option>
-            <h-option value="io">.io</h-option>
-          </h-select>
-        </h-typefield>
+        <h-typefield v-model="formItem1.money" bigTips type="money"></h-typefield>
       </h-form-item>
       <h-form-item label="单选框" prop="radio">
         <h-radio-group v-model="formItem1.radio">
@@ -71,13 +52,7 @@
         </h-checkbox-group>
       </h-form-item>
       <h-form-item label="特殊日期" prop="fatdate">
-        <h-fast-date v-model="formItem1.fatdate"></h-fast-date>
-      </h-form-item>
-      <h-form-item label="特殊日期" prop="fatdate">
-        <h-fast-date v-model="formItem1.fatdate"></h-fast-date>
-      </h-form-item>
-      <h-form-item label="特殊日期" prop="fatdate">
-        <h-fast-date v-model="formItem1.fatdate"></h-fast-date>
+        <h-fast-date v-model="formItem1.fatdate" :options="options"></h-fast-date>
       </h-form-item>
       <h-form-item label="下拉表" prop="slider">
         <h-select-table v-model="formItem1.slider">
@@ -91,7 +66,6 @@
           style="width:200px"
           :data="baseData1"
           placement="top"
-          placeholder="你好"
         ></h-select-tree>
       </h-form-item>
       <h-form-item label="文本域" prop="textarea">
@@ -119,7 +93,7 @@ export default {
       model1: "",
       changeform: false,
       formItem1: {
-        input: "1",
+        name: "",
         select: [],
         radio: "",
         money: "",
@@ -277,6 +251,11 @@ export default {
       firstValc: "parent",
       fromRule: {
         name: [{ required: true, message: "姓名不能为空", trigger: "blur" }]
+      },
+      options: {
+        disabledDate(date) {
+          return date && date.valueOf() < Date.now() - 86400000;
+        }
       }
     };
   },
