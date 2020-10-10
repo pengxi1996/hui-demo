@@ -26,6 +26,9 @@
           @on-change="changeVal"
         ></h-date-picker>
       </h-col>
+      <h-col span="2" :offset="1">
+        <h-button type="primary" @click="addPeople">新增</h-button>
+      </h-col>
     </h-row>
     <h-row>
       <h-col span="4" v-show="nameSearch">
@@ -55,10 +58,29 @@
         ></h-page>
       </div>
     </div>
+    <!-- 新增弹框 -->
+    <h-msg-box
+      v-model="msgbox"
+      :escClose="true"
+      title="公告发布"
+      @on-ok="ok"
+      @on-cancel="cancel"
+      :beforeEscClose="beforetest"
+      :mask-closable="false"
+      width="850px"
+      top="50"
+    >
+      <addRole></addRole>
+    </h-msg-box>
   </div>
 </template>
 <script>
+import { addRole } from "../components/index.js";
 export default {
+  name: "index",
+  components: {
+    addRole
+  },
   data() {
     return {
       columns: [
@@ -150,7 +172,8 @@ export default {
       dateSearch: false,
       dateVal: [],
       pageSize: 10,
-      currentPage: 1
+      currentPage: 1,
+      msgbox: false
     };
   },
   methods: {
@@ -221,6 +244,21 @@ export default {
     },
     handleCurrentChange(val) {
       this.currentPage = val;
+    },
+    addPeople() {
+      this.msgbox = true;
+    },
+    beforetest() {
+      return false;
+    },
+    ok() {
+      this.$hMessage.info("点击了确定");
+      console.log(this.msgbox);
+      this.msgbox = true;
+      console.log(this.msgbox);
+    },
+    cancel() {
+      this.$hMessage.info("点击了取消");
     }
   },
   filters: {

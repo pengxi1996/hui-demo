@@ -290,6 +290,18 @@ window.LOCAL_CONFIG = {
           comName: 'bizEmailOutbox',
           children: null
         },
+        {
+          url: '/style-isolate/menu',
+          kind_code: 'style-isolate',
+          app_code: 'style-isolate',
+          id: 'style-isolate-menu',
+          title: 'style-isolate-menu',
+          parent_id: 'style-isolate',
+          icon: 'card',
+          is_keep_alivea: true,
+          comName: 'bizEmailOutbox',
+          children: null
+        },
       ]
     },
     {

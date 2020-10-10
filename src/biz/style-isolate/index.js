@@ -1,3 +1,4 @@
+
 export default {
   router: {
     "style-isolate-index": () =>
@@ -14,6 +15,11 @@ export default {
       import(
         /* webpackChunkName: "style-isolate/test" */
         `@style-isolate/views/selectTab`
+      ),
+      "style-isolate-menu": () =>
+      import(
+        /* webpackChunkName: "style-isolate/menu" */
+        `@style-isolate/views/menu`
       ),
   },
 
