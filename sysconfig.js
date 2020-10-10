@@ -261,7 +261,7 @@ window.LOCAL_CONFIG = {
           id: 'style-isolate-index',
           title: 'style-isolate-index',
           parent_id: 'style-isolate',
-          icon: 'home',
+          icon: 'social-usd',
           is_keep_alivea: true,
           comName: 'bizEmailOutbox',
           children: null
@@ -273,7 +273,19 @@ window.LOCAL_CONFIG = {
           id: 'style-isolate-test',
           title: 'style-isolate-test',
           parent_id: 'style-isolate',
-          icon: 'home',
+          icon: 'card',
+          is_keep_alivea: true,
+          comName: 'bizEmailOutbox',
+          children: null
+        },
+        {
+          url: '/style-isolate/selectTab',
+          kind_code: 'style-isolate',
+          app_code: 'style-isolate',
+          id: 'style-isolate-selectTab',
+          title: 'style-isolate-selectTab',
+          parent_id: 'style-isolate',
+          icon: 'card',
           is_keep_alivea: true,
           comName: 'bizEmailOutbox',
           children: null

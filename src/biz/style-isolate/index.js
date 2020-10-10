@@ -9,7 +9,12 @@ export default {
       import(
         /* webpackChunkName: "style-isolate/test" */
         `@style-isolate/views/test`
-      )
+      ),
+      "style-isolate-selectTab": () =>
+      import(
+        /* webpackChunkName: "style-isolate/test" */
+        `@style-isolate/views/selectTab`
+      ),
   },
 
   i18n: false
