@@ -3,18 +3,18 @@
     <h-form label-width="100">
       <h-row :gutter="8">
         <h-col span="6">
-          <h-form-item :label="$t('m.i.demo.roleNum')+':'">
+          <h-form-item :label="$t('m.i.systemManagement.roleNum')+':'">
             <h-input type="text" v-model="filters.number"></h-input>
           </h-form-item>
         </h-col>
         <h-col span="6">
-          <h-form-item :label="$t('m.i.demo.roleName')+':'">
+          <h-form-item :label="$t('m.i.systemManagement.roleName')+':'">
             <h-input type="text" v-model="filters.name"></h-input>
           </h-form-item>
         </h-col>
         <el-col span="4">
-          <h-button type="primary" @on-click="search">{{$t('m.i.demo.inquiry')}}</h-button>
-          <h-button @on-click="reset">{{$t('m.i.demo.reset')}}</h-button>
+          <h-button type="primary" @on-click="search">{{$t('m.i.systemManagement.inquiry')}}</h-button>
+          <h-button @on-click="reset">{{$t('m.i.systemManagement.reset')}}</h-button>
         </el-col>
       </h-row>
     </h-form>
