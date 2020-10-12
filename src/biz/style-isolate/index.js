@@ -1,3 +1,7 @@
+import Lang from "@style-isolate/lang";
+
+
+console.log(Lang);
 
 export default {
   router: {
@@ -11,17 +15,22 @@ export default {
         /* webpackChunkName: "style-isolate/test" */
         `@style-isolate/views/test`
       ),
-      "style-isolate-selectTab": () =>
+    "style-isolate-selectTab": () =>
       import(
         /* webpackChunkName: "style-isolate/test" */
         `@style-isolate/views/selectTab`
       ),
-      "style-isolate-menu": () =>
+    "style-isolate-menu": () =>
       import(
         /* webpackChunkName: "style-isolate/menu" */
         `@style-isolate/views/menu`
       ),
+    "style-isolate-role": () =>
+      import(
+        /* webpackChunkName: "style-isolate/role" */
+        `@style-isolate/views/role`
+      ),
   },
 
-  i18n: false
+  i18n: Lang
 };

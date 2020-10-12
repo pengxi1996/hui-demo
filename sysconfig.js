@@ -32,7 +32,7 @@ window.LOCAL_CONFIG = {
   isOpenFirstPwd: false, //第一次登陆是否弹出修改密码
   webEncryptType: "3DES",
   isShowNoticeBar: false, //是否显示底部消息提示组件
-  isHidePwdAndLockScreen: false, //是否隐藏修改密码和锁屏
+  isHidePwdAndLockScreen: true, //是否隐藏修改密码和锁屏
   isShowMsg: true, //首页上是否显示站内消息
   isCasLogin: false, // 是否启用MVC单点登录
   isIARCasLogin: false, // 是否启用IAR单点登录
@@ -42,7 +42,7 @@ window.LOCAL_CONFIG = {
   casLogOutUrl: '/cas/user/logout', //IAR登出接口
   isI18n: true,
   isTenantMode: false, //是否是多租户模式
-  isShowLocalLang: false, //是否显示国际化切换按钮
+  isShowLocalLang: true, //是否显示国际化切换按钮
   isShowTheme: false, //是否显示换肤
   isRecordUserBehavior: false, //是否记录用户行为分析
   freeLogin: false, // 设置为true时，用于屏蔽锁屏、修改密码、退出登录
@@ -296,6 +296,18 @@ window.LOCAL_CONFIG = {
           app_code: 'style-isolate',
           id: 'style-isolate-menu',
           title: 'style-isolate-menu',
+          parent_id: 'style-isolate',
+          icon: 'card',
+          is_keep_alivea: true,
+          comName: 'bizEmailOutbox',
+          children: null
+        },
+        {
+          url: '/style-isolate/role',
+          kind_code: 'style-isolate',
+          app_code: 'style-isolate',
+          id: 'style-isolate-role',
+          title: 'style-isolate-role',
           parent_id: 'style-isolate',
           icon: 'card',
           is_keep_alivea: true,

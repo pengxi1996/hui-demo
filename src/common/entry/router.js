@@ -16,6 +16,9 @@ import { encryptParam } from '@frame/api/login'
 Vue.use(Router)
 Vue.use(History)
 
+
+console.log(constantRouterMap);
+
 // 页面外层路由
 const wrapperRoute = [
   {
@@ -33,7 +36,8 @@ const wrapperRoute = [
           comName: 'mainIndex',
           isKeepAlive: window.LOCAL_CONFIG.KEEP_MAININDEX_ALIVE
         }
-      }
+      },
+      
     ]
   }
 ]
