@@ -30,6 +30,11 @@ export default {
         /* webpackChunkName: "style-isolate/role" */
         `@style-isolate/views/role`
       ),
+      "style-isolate-personnel": () =>
+      import(
+        /* webpackChunkName: "style-isolate/personnel" */
+        `@style-isolate/views/personnel`
+      ),
   },
 
   i18n: Lang

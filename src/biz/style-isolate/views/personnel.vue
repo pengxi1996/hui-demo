@@ -3,12 +3,12 @@
     <h-form label-width="100">
       <h-row :gutter="8">
         <h-col span="6">
-          <h-form-item :label="$t('m.i.systemManagement.roleNum')+':'">
+          <h-form-item :label="$t('m.i.systemManagement.userNum')+':'">
             <h-input type="text" v-model="filters.number"></h-input>
           </h-form-item>
         </h-col>
         <h-col span="6">
-          <h-form-item :label="$t('m.i.systemManagement.roleName')+':'">
+          <h-form-item :label="$t('m.i.systemManagement.userName')+':'">
             <h-input type="text" v-model="filters.name"></h-input>
           </h-form-item>
         </h-col>
@@ -19,11 +19,17 @@
       </h-row>
     </h-form>
     <div style="margin-top:1em;">
-      <div style="margin-bottom:.8em;">
+      <div class="g-button">
         <h-button-group>
           <h-button type="primary" @on-click="addRole">{{$t('m.i.systemManagement.add')}}</h-button>
-          <h-button @on-click="custom">{{$t('m.i.systemManagement.delete')}}</h-button>
-          <h-button @on-click="assginUsers">{{$t('m.i.systemManagement.assginUsers')}}</h-button>
+        </h-button-group>
+        <h-button-group>
+          <h-button @on-click="addRole">{{$t('m.i.systemManagement.logout')}}</h-button>
+          <h-button @on-click="addRole">{{$t('m.i.systemManagement.activate')}}</h-button>
+        </h-button-group>
+        <h-button-group>
+          <h-button @on-click="addRole">{{$t('m.i.systemManagement.freeze')}}</h-button>
+          <h-button @on-click="addRole">{{$t('m.i.systemManagement.thaw')}}</h-button>
         </h-button-group>
       </div>
       <h-table
@@ -65,7 +71,7 @@
         <h-form-item :label="$t('m.i.systemManagement.roleName')" prop="roleName">
           <h-input v-model="addRoleForm.roleName"></h-input>
         </h-form-item>
-        <h-form-item :label="$t('m.i.systemManagement.remarks')" prop="remarks">
+        <h-form-item :label="$t('m.i.systemManagement.userStatus')" prop="remarks">
           <h-input
             v-model="addRoleForm.remarks"
             type="textarea"
@@ -170,21 +176,66 @@ export default {
           align: "center"
         },
         {
-          title: self.$t("m.i.systemManagement.roleNum"),
-          key: "roleNum"
+          title: self.$t("m.i.systemManagement.userNum"),
+          key: "userNum"
         },
         {
-          title: self.$t("m.i.systemManagement.roleName"),
-          key: "roleName"
+          title: self.$t("m.i.systemManagement.userName"),
+          key: "userName"
+        },
+        {
+          title: self.$t("m.i.systemManagement.userStatus"),
+          key: "userStatus"
+        },
+        {
+          title: self.$t("m.i.systemManagement.workingStatus"),
+          key: "workingStatus",
+          width: 120
+        },
+        {
+          title: self.$t("m.i.systemManagement.cellphoneNumber"),
+          key: "cellphoneNumber",
+          width: 140
+        },
+        {
+          title: self.$t("m.i.systemManagement.email"),
+          key: "email",
+          width: 120
+        },
+        {
+          title: self.$t("m.i.systemManagement.creationDate"),
+          key: "creationDate",
+          width: 120
+        },
+        {
+          title: self.$t("m.i.systemManagement.creator"),
+          key: "creator"
+        },
+        {
+          title: self.$t("m.i.systemManagement.modifiedDate"),
+          key: "modifiedDate",
+          width: 120
+        },
+        {
+          title: self.$t("m.i.systemManagement.editor"),
+          key: "editor"
+        },
+        {
+          title: self.$t("m.i.systemManagement.lastLoginTime"),
+          key: "lastLoginTime",
+          width: 140
         },
         {
           title: self.$t("m.i.systemManagement.remarks"),
-          key: "address"
+          key: "remarks"
         },
+
         {
           title: self.$t("m.i.systemManagement.operate"),
           key: "action",
-          align: "center",
+          fixed: "right",
+          width: 160,
+          align:'center',
           render: (h, params) => {
             let that = params;
             return h("div", [
@@ -201,7 +252,7 @@ export default {
                     }
                   }
                 },
-                self.$t("m.i.systemManagement.assignPer")
+                self.$t("m.i.systemManagement.authorize")
               ),
               h(
                 "Button",
@@ -302,10 +353,11 @@ export default {
   background-color: #fff;
   padding: 8px 5px;
 }
-.g-page {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
+.g-button {
+  margin-bottom: 0.8em;
+}
+.h-btn-group {
+  margin-right: 1em;
 }
 /deep/ .table-info-column div .h-btn-text {
   color: #3696f4;
